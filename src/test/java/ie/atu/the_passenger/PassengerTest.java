@@ -68,6 +68,20 @@ class PassengerTest {
         Exception e_message = assertThrows(IllegalArgumentException.class,() ->person = new Passenger("Ms","Shan",1234567890,12345,20));
         assertEquals("Phone number must be at least 7 digits long",e_message.getMessage());
     }
+
+    @Test
+    void test_success_age_check()
+    {
+        person = new Passenger("Ms","Shan",1234567890,1234567,20);
+        assertEquals(20,person.get_age());
+    }
+
+    @Test
+    void test_fail_age_check()
+    {
+        Exception e_message =assertThrows(IllegalArgumentException.class,() ->person = new Passenger("Ms","Shan",1234567890,1234567,16));
+        assertEquals("Passenger must be over 16 to fly",e_message.getMessage());
+    }
     @AfterEach
     void tearDown() {
     }

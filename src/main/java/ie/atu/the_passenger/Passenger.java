@@ -16,7 +16,14 @@ public class Passenger {
     }
 
     private void set_age(int age) {
-        Age = age;
+        if(age>16)
+        {
+            Age = age;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Passenger must be over 16 to fly");
+        }
     }
 
     private void set_no(long phone_no)
@@ -82,5 +89,9 @@ public class Passenger {
 
     public long get_phone_no() {
         return Phone_no;
+    }
+
+    public int get_age() {
+        return Age;
     }
 }
