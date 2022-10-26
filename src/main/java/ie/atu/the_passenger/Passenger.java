@@ -3,17 +3,16 @@ package ie.atu.the_passenger;
 public class Passenger {
     private String Title;
     private String Name;
-    private String Id;
+    private int Id;
     private int Phone_no;
     private int Age;
 
-    public Passenger(String title, String name, String id, int phone_no, int age) {
+    public Passenger(String title, String name, int id, int phone_no, int age) {
         set_title(title);
         set_name(name);
         set_id(id);
         set_no(phone_no);
         set_age(age);
-
     }
 
     private void set_age(int age) {
@@ -24,7 +23,7 @@ public class Passenger {
         Phone_no = phone_no;
     }
 
-    private void set_id(String id) {
+    private void set_id(int id) {
         Id = id;
     }
 
@@ -36,13 +35,11 @@ public class Passenger {
     {
         if ("Mr".equalsIgnoreCase(title) || "Ms".equalsIgnoreCase(title) || "Mrs".equalsIgnoreCase(title))
         {
-
+            Title= title;
         }
         else
         {
-            ///throw exception!!!
-
-
+            throw new IllegalArgumentException("Title can only be Mr, Mrs or Ms");
         }
 
     }
