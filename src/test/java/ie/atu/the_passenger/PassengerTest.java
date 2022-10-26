@@ -8,10 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PassengerTest {
     Passenger person;
-
     @BeforeEach
     void setUp() {
-
     }
 
     @Test
@@ -20,13 +18,12 @@ class PassengerTest {
         person = new Passenger("Mr","Shannon",2368325,674612469,20);
         assertEquals("Mr",person.get_title());
     }
-/*
+
     @Test
     void test_fail_title_check()
     {
-        Exception e_message = assertThrows(IllegalArgumentException.class, () ->{person.set_title("CAT");});
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> {new Passenger ("CAT","Shannon",2368325,674612469,20);});
     }
-    */
     @AfterEach
     void tearDown() {
     }
