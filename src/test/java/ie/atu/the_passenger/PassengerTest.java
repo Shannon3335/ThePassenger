@@ -41,6 +41,19 @@ class PassengerTest {
         assertEquals("Name must be longer than 3 characters",e_message.getMessage());
     }
 
+    @Test
+    void test_success_id_check()
+    {
+        person = new Passenger("Ms","Shan",1234567890,1234567,20);
+        assertEquals(1234567890,person.get_id());
+    }
+
+    @Test
+    void test_fail_id_check()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class,()->person = new Passenger("Ms","Shan",1234560,1234567,20));
+        assertEquals("Id must be at least 10 digits long",e_message.getMessage());
+    }
 
     @AfterEach
     void tearDown() {

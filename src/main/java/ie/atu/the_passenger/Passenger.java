@@ -24,12 +24,19 @@ public class Passenger {
     }
 
     private void set_id(long id) {
-        Id = id;
+        if (String.valueOf(id).length()>=10)
+        {
+            Id = id;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Id must be at least 10 digits long");
+        }
     }
 
     private void set_name(String name) {
 
-        if (name.length()>3)
+        if (name.length()>=3)
         {
             Name = name;
         }
@@ -61,4 +68,7 @@ public class Passenger {
         return Name;
     }
 
+    public long get_id() {
+        return Id;
+    }
 }
