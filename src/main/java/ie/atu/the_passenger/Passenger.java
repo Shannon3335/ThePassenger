@@ -19,8 +19,16 @@ public class Passenger {
         Age = age;
     }
 
-    private void set_no(long phone_no) {
-        Phone_no = phone_no;
+    private void set_no(long phone_no)
+    {
+        if(String.valueOf(phone_no).length() >= 7)
+        {
+            Phone_no = phone_no;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Phone number must be at least 7 digits long");
+        }
     }
 
     private void set_id(long id) {
@@ -70,5 +78,9 @@ public class Passenger {
 
     public long get_id() {
         return Id;
+    }
+
+    public long get_phone_no() {
+        return Phone_no;
     }
 }

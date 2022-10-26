@@ -55,6 +55,19 @@ class PassengerTest {
         assertEquals("Id must be at least 10 digits long",e_message.getMessage());
     }
 
+    @Test
+    void test_success_phoneno_check()
+    {
+        person = new Passenger("Ms","Shan",1234567890,1234567,20);
+        assertEquals(1234567,person.get_phone_no());
+    }
+
+    @Test
+    void test_fail_phoneno_check()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class,() ->person = new Passenger("Ms","Shan",1234567890,12345,20));
+        assertEquals("Phone number must be at least 7 digits long",e_message.getMessage());
+    }
     @AfterEach
     void tearDown() {
     }
