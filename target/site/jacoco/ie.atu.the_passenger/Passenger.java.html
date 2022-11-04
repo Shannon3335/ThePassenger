@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Passenger.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ThePassenger</a> &gt; <a href="index.source.html" class="el_package">ie.atu.the_passenger</a> &gt; <span class="el_source">Passenger.java</span></div><h1>Passenger.java</h1><pre class="source lang-java linenums">package ie.atu.the_passenger;
+
+public class Passenger {
+    private String Title;
+    private String Name;
+    private long Id;
+    private long Phone_no;
+    private int Age;
+
+<span class="fc" id="L10">    public Passenger(String title, String name, long id, long phone_no, int age) {</span>
+<span class="fc" id="L11">        set_title(title);</span>
+<span class="fc" id="L12">        set_name(name);</span>
+<span class="fc" id="L13">        set_id(id);</span>
+<span class="fc" id="L14">        set_no(phone_no);</span>
+<span class="fc" id="L15">        set_age(age);</span>
+<span class="fc" id="L16">    }</span>
+
+    private void set_age(int age) {
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if(age&gt;16)</span>
+        {
+<span class="fc" id="L21">            Age = age;</span>
+        }
+        else
+        {
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;Passenger must be over 16 to fly&quot;);</span>
+        }
+<span class="fc" id="L27">    }</span>
+
+    private void set_no(long phone_no)
+    {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(String.valueOf(phone_no).length() &gt;= 7)</span>
+        {
+<span class="fc" id="L33">            Phone_no = phone_no;</span>
+        }
+        else
+        {
+<span class="fc" id="L37">            throw new IllegalArgumentException(&quot;Phone number must be at least 7 digits long&quot;);</span>
+        }
+<span class="fc" id="L39">    }</span>
+
+    private void set_id(long id) {
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (String.valueOf(id).length()&gt;=10)</span>
+        {
+<span class="fc" id="L44">            Id = id;</span>
+        }
+        else
+        {
+<span class="fc" id="L48">            throw new IllegalArgumentException(&quot;Id must be at least 10 digits long&quot;);</span>
+        }
+<span class="fc" id="L50">    }</span>
+
+    private void set_name(String name) {
+
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (name.length()&gt;=3)</span>
+        {
+<span class="fc" id="L56">            Name = name;</span>
+        }
+        else
+        {
+<span class="fc" id="L60">            throw new IllegalArgumentException(&quot;Name must be longer than 3 characters&quot;);</span>
+        }
+
+<span class="fc" id="L63">    }</span>
+
+    public void set_title(String title)
+    {
+<span class="pc bpc" id="L67" title="1 of 6 branches missed.">        if (&quot;Mr&quot;.equalsIgnoreCase(title) || &quot;Ms&quot;.equalsIgnoreCase(title) || &quot;Mrs&quot;.equalsIgnoreCase(title))</span>
+        {
+<span class="fc" id="L69">            Title = title;</span>
+        }
+        else
+        {
+<span class="fc" id="L73">            throw new IllegalArgumentException(&quot;Title can only be Mr, Mrs or Ms&quot;);</span>
+        }
+
+<span class="fc" id="L76">    }</span>
+
+    public String get_title() {
+<span class="fc" id="L79">        return Title;</span>
+    }
+
+    public String get_name() {
+<span class="fc" id="L83">        return Name;</span>
+    }
+
+    public long get_id() {
+<span class="fc" id="L87">        return Id;</span>
+    }
+
+    public long get_phone_no() {
+<span class="fc" id="L91">        return Phone_no;</span>
+    }
+
+    public int get_age() {
+<span class="fc" id="L95">        return Age;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
