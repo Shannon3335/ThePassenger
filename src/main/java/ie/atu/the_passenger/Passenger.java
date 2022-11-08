@@ -16,6 +16,7 @@ public class Passenger {
     }
 
     private void set_age(int age) {
+        //Passenger must be 16 years or older
         if(age>16)
         {
             Age = age;
@@ -28,6 +29,7 @@ public class Passenger {
 
     private void set_no(long phone_no)
     {
+        //phone number must be at least 7 digits long
         if(String.valueOf(phone_no).length() >= 7)
         {
             Phone_no = phone_no;
@@ -39,6 +41,7 @@ public class Passenger {
     }
 
     private void set_id(long id) {
+        //Passenger id must be atleast 10 digits long
         if (String.valueOf(id).length()>=10)
         {
             Id = id;
@@ -50,7 +53,7 @@ public class Passenger {
     }
 
     private void set_name(String name) {
-
+        //Passenger name must be at least 3 characters
         if (name.length()>=3)
         {
             Name = name;
@@ -64,6 +67,7 @@ public class Passenger {
 
     public void set_title(String title)
     {
+        //Passenger title can only be Mr, Ms or Mrs
         if ("Mr".equalsIgnoreCase(title) || "Ms".equalsIgnoreCase(title) || "Mrs".equalsIgnoreCase(title))
         {
             Title = title;
